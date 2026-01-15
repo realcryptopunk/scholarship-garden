@@ -1095,13 +1095,6 @@ const categories = [
 ];
 
 // Cute SVG icons
-const SearchIcon = () => (
-  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-    <circle cx="11" cy="11" r="7"/>
-    <path d="M21 21l-4-4"/>
-  </svg>
-);
-
 const ExternalLinkIcon = () => (
   <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
@@ -1638,16 +1631,13 @@ export default function ScholarshipAggregator() {
         }`}>
           <div className="flex flex-col lg:flex-row gap-4">
             {/* Search */}
-            <div className="flex-1 relative">
-              <div className={`absolute left-4 top-1/2 -translate-y-1/2 ${activeTab === 'scholarships' ? 'text-emerald-500' : 'text-teal-500'}`}>
-                <SearchIcon />
-              </div>
+            <div className="flex-1">
               <input
                 type="text"
                 placeholder={activeTab === 'scholarships' ? "🔍 Search scholarships..." : "🔍 Search jobs..."}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className={`w-full pl-12 pr-4 py-3.5 border-2 rounded-2xl focus:outline-none focus:ring-4 transition-all text-gray-700 font-medium ${
+                className={`w-full px-4 py-3.5 border-2 rounded-2xl focus:outline-none focus:ring-4 transition-all text-gray-700 font-medium ${
                   activeTab === 'scholarships'
                     ? 'bg-gradient-to-r from-emerald-50 to-green-50 border-emerald-200 focus:ring-emerald-200 focus:border-emerald-400 placeholder-emerald-400'
                     : 'bg-gradient-to-r from-teal-50 to-cyan-50 border-teal-200 focus:ring-teal-200 focus:border-teal-400 placeholder-teal-400'
